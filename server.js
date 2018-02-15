@@ -23,12 +23,12 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 
 // // parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 // // parse application/json
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 // // Static directory
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // Routes
 // =============================================================
@@ -37,11 +37,15 @@ require("./routes/api-routes.js")(app);
 // Routes
 
 app.get("/", function(req, res) {
-  res.render("all-burgers", {
-    foods: db.Burger.findAll({}),
-    eater: "Everyone"
+  db.Burger.findall({}).then(function(dbburger){
+    res.render("all-burgers", {
+      foods: dbburger,
+      eater: "Everyone"
+    });
   });
 });
+
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

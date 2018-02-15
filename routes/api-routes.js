@@ -45,7 +45,7 @@ module.exports = function(app) {
     // We just have to specify which burger we want to destroy with "where"
     db.Burger.destroy({
       where: {
-        id: req.params.id
+        "id": req.params.id
       }
     }).then(function(dbburger) {
       res.json(dbburger);
