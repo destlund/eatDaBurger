@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      <h2><a href="/">Back to Burgers</a></h2>
+    </div>
+    <div class="col-xs-8">
+      <h2>Vote Here!</h2>
+      <form id="newCust" action="index.html" method="post">
+        <p>Enter Your First and Last Name:</p>
+        <div id="errors"></div>
+        <input type="text" name="name">
+        <p>Select your favorite burger!</p>
+        <select name="id">
+          {{#each burgers}}
+          <option value="{{this.id}}">{{this.burger_name}}</option>
+          {{/each}}
+        </select>
+        <a href="/hof"><button id="vote">Cast your vote!</button></a>
+      </form>
+    </div>
+    <div class="col-xs-2">
+      <h2><a href="/hof" class='pull-right'>Go to Hall of Fame!</a></h2>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$("#vote").on("click", function(event) {
+  event.preventDefault();
+  var newCust = {
+    customer_name: $("#newCust [name=name]").val().trim(),
+    burgerId: $("[name=id]").val().trim()
+  };
+  $.ajax("/api/customers", {
+    type: "POST",
+    data: newCust
+  }).then(function(err) {
+    if (err.errors) {
+      $('#errors').html(`<h3> ${err.errors[0].message} </h3>`);
+      // location.href = '';
+      return;
+    } else {
+      location.href = "/hof";
+    }
+  });
+});
+</script>

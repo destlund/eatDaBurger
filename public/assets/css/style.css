@@ -1,0 +1,91 @@
+body {
+  background-color: rgb(202, 202, 202);
+  text-align: center;
+  padding: 20px;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.3vw;
+  /* font-family: 'Nanum Brush Script', cursive; */
+}
+
+h1, h2, p {
+  font-family: 'Helvetica', sans-serif;
+  color: rgb(105, 17, 94);
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+.col-xs-6 {
+  margin-top: 40px;
+}
+
+table {
+  width: 100%;
+  font-size: 1.6vw;
+}
+
+th {
+  text-align: center;
+  text-decoration: underline;
+}
+
+pre {
+  font-family: 'Helvetica', sans-serif;
+}
+
+p {
+  font-family: 'Helvetica', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  position: relative;
+  width: 12%;
+  z-index: 2;
+}
+
+pre {
+  height: 2.5em;
+  background-color: white;
+  text-align: center;
+  font-size: 2vw;
+}
+
+.form-control {
+  font-size: 1.5vw;
+}
+
+textarea {
+  width: 40%;
+  height: 100px;
+  font-size: 2vw;
+}
+
+input {
+  width: 25vw;
+}
+
+a {
+  font-size: 2vw;
+}
+
+.btn {
+  margin: 3px auto;
+}
+
+/* Add Customer CSS */
+select {
+  display: inline-block;
+}
+#vote {
+  display: block;
+  margin: 10px auto;
+}
+
+.grey-text {
+  color: lightslategray;
+}

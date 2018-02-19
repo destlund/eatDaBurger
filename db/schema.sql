@@ -1,7 +1,3 @@
--- Drops the burgers if it exists currently --
-DROP DATABASE IF EXISTS burgers;
--- Creates the "burgers" database --
-CREATE DATABASE burgers;
 CREATE TABLE burgers (
 	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	burger_name VARCHAR(255),
